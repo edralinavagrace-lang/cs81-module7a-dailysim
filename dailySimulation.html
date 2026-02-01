@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>My Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+  <div id="schedule">
+    <div class="event"><span class="time">8:00am</span><span class="activity">Getting up and Getting Ready!</span></div>
+    <div class="event"><span class="time">8:30am</span><span class="activity">Finish reading news and drinking coffee☕️</span></div>
+    <div class="event"><span class="time">9:00am</span><span class="activity">Play Marvel Rivals!</span></div>
+    <div class="event"><span class="time">9:45am</span><span class="activity">Finish gaming and Go To Work🚗</span></div>
+    <div class="event"><span class="time">10:04am</span><span class="activity">Arrive at Work Early.</span></div>
+    <div class="event"><span class="time">6:15pm</span><span class="activity">Leave Work and head home</span></div>
+  </div>
+  <div id="surpriseEvent" class="surprise"></div>
+  <button onclick="runSimulation()">Surprise!</button>
+  <script>
+    const output = document.getElementById("output");
+    function runSimulation() {
+        const surprises = [
+            "During the Morning, I felt well energized and ready for the day!",
+            "While gaming, I felt focused",
+            "While working I felt focused and motivated",
+        ];
+        const randomSurprise = surprises[Math.floor(Math.random()*surprises.length)];
+        const surpriseDiv=document.getElementById("surpriseEvent");
+
+        surpriseDiv.style.display="block";
+        surpriseDiv.innerHTML= "SURPRISE! " + randomSurprise;
+    };
+    
+
+  </script>
+
+</body>
+</html>
